@@ -11417,8 +11417,6 @@ static bool test_backend(ggml_backend_t backend, ggml_backend_dev_t dev, test_mo
         output_printer->print_failed_tests(failed_tests);
 
         if (tests_run == 0) {
-            output_printer->print_backend_status(
-                backend_status_info(ggml_backend_name(backend), test_status_t::SKIPPED));
             return false;
         }
 
@@ -11442,8 +11440,6 @@ static bool test_backend(ggml_backend_t backend, ggml_backend_dev_t dev, test_mo
         output_printer->print_summary(test_summary_info(n_ok, test_cases.size(), false));
 
         if (test_cases.empty()) {
-            output_printer->print_backend_status(
-                backend_status_info(ggml_backend_name(backend), test_status_t::SKIPPED));
             return false;
         }
 
